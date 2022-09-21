@@ -45,3 +45,7 @@ body{
     border-style: solid;
     border-color: #44b68c;
 }
+
+.formulario form input{
+    height: 30px;
+}
