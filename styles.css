@@ -1,0 +1,47 @@
+body{
+   background-color: #A6FFDF; 
+}
+
+.titulo {
+    border-radius: 4px;
+    border-color: #44b68c;
+    border-style: solid;
+    background-color: #1eca8b;
+}
+
+.titulo p{
+    text-align: center;
+    font-weight: bold;
+    font-size: 45px;
+    font-family: fantasy;
+}
+
+.formulario{
+    margin:auto;
+    text-align: center;
+    margin-top: 30px;
+    border-style: solid;
+    border-color: #44b68c;
+    height: 500px;
+    width: 60%;
+}
+
+.imagen{
+    float: right;
+    margin-right: 15%;
+    margin-top: 8%;
+}
+
+.formulario form{
+    text-align: left;
+    margin-left: 50px;
+    margin-top: 10%;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    background-color: #72ffcb;
+    width: 300px;
+    padding: 4%;
+    border-radius: 5px;
+    border-style: solid;
+    border-color: #44b68c;
+}
