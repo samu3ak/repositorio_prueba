@@ -1,0 +1,33 @@
+.linkMal a {
+    text-decoration: none;
+    color: green;
+}
+
+button {
+    color: white;
+    font-weight: bold;
+    background-color: rgb(0, 162, 212);
+    padding: 22px;
+    border-color: black;
+    border-radius: 5px;
+    font-size: 18px;
+}
+
+.test {
+    height: 600px;
+    width: 500px;
+}
+
+.test h1{
+    margin-top: 100px;
+    margin-left: 30px;
+}
+
+.test button {
+    margin-top: 300px;
+    margin-left: 20px;
+}
+
+.test span button {
+    margin-left: 100px;
+}
