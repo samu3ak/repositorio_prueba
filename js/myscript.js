@@ -148,3 +148,81 @@ console.log("Otro for each¿");
 fourth_array.forEach(function (element) {
     console.log("Fourth iteration " + element);
 });
+
+// If / else / elseif
+console.log("If else else if example");
+let aux = 3;
+if (aux > 0) {
+    console.log("This number is positive");
+} else if (aux < 0) {
+    console.log("This number is negative");
+} else {
+    console.log("This number is 0");
+}
+
+// Regular expressions
+console.log("Expresión regular");
+var DNI_REGEX = /^(\d{8})([A-Z])$/;
+let dni = "12345678K";
+if (dni.match(DNI_REGEX)) {
+    console.log("Correct DNI");
+} else {
+    console.log("Incorrect DNI");
+}
+
+// Comparison Operators
+console.log("Comparison Operators");
+console.log(8 == 8);
+console.log(8 == "8");
+console.log(8 === 8);
+console.log(8 === "8");
+
+console.log("Mas");
+console.log(5 > 8);
+console.log(5 < 8);
+console.log(5 >= 8);
+console.log(5 <= 8);
+
+console.log("Mas x2");
+console.log(8 != 8);
+console.log(8 != "8");
+console.log(8 === 8);
+console.log(8 !== "8");
+
+console.log("Mas x3");
+console.log("test" == "test");
+console.log("test" === 'test');
+console.log("test" == "Test");
+
+
+// Loop While
+console.log("Loop While");
+
+var i = 1;
+while (i < 10) {
+    console.log("The number is " + i);
+    i++;
+}
+
+// Switch/Case
+console.log("Switch/Case");
+
+
+//Date object
+console.log("Date object");
+
+let today = new Date();
+let first_october = new Date(2019, 9, 1);
+console.log(today);
+console.log(first_october);
+console.log(today.getDay());
+console.log(today.getDate());
+console.log(today.getMonth()+1);
+
+// Comparar fechas
+if(today>first_october){
+    console.log("Today is after to first october");
+}else{
+    console.log("Today is before to first october");
+}
+
