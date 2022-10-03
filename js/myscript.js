@@ -293,3 +293,32 @@ $("#btn2").addEventListener("click", function () {
     var input = document.createElement("input");
     console.log(input);
 });
+
+// LE METO ATRIBUTOS
+
+$("#btn2").addEventListener("click", function () { // LO MODIFICO PARA QUE CREE LA ETIQUETA
+    var input = document.createElement("input");
+    input.setAttribute("type", "email");
+    input.setAttribute("placeholder", "E-mail");
+    input.setAttribute("name", "mails");
+    $("#forms").appendChild(input);
+});
+
+// MAS CAMBIOS 
+
+$("#btn2").addEventListener("click", function () { // LO MODIFICO PARA QUE CREE LA ETIQUETA
+    var input = document.createElement("input");
+    input.setAttribute("type", "email");
+    input.setAttribute("placeholder", "E-mail");
+    input.setAttribute("name", "mails");
+    $("#forms").appendChild(input);
+    myAlert("Add new email input");
+});
+
+function myAlert(msg) {
+    var div = document.createElement("div");
+    div.classList.add("alert");
+    div.innerHTML = msg; // METE EN MEDIO DE LA ETIQUETA EL TEXTO MSG MANDADO POR PARÁMETRO
+    $("body").insertBefore(div, $("body").firstChild); // LO METE ANTES DEL PRIMER ELEMENTO DEL BODY, EN LOS PARÁMETROS PRIMERO VA 
+    // LO QUE QUIERES METER (EL DIV), ANTES DEL PRIMER HIJO DEL BODY
+}
