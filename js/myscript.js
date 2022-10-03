@@ -85,18 +85,66 @@ let testBoolean2 = true;
 let testNumber2 = 12;
 let testString2 = "Hello!";
 let testBooleanObject2 = new Boolean(true);
-console.log(typeof(testBoolean2));
-console.log(typeof(testNumber2));
-console.log(typeof(testString2));
-console.log(typeof(testBooleanObject2));
+console.log(typeof (testBoolean2));
+console.log(typeof (testNumber2));
+console.log(typeof (testString2));
+console.log(typeof (testBooleanObject2));
 
 console.log("Null Ejemplo");
 let testNull = null;
 console.log(testNull);
-console.log(typeof(testNull));
+console.log(typeof (testNull));
 
 console.log("Undefined ejemplo");
 let testUndefined;
 console.log(testUndefined);
 
 // Array
+var first_array = [];
+var second_array = new Array(3);
+var third_array = new Array(3, 5);
+var fourth_array = new Array(3, 5, "Seville", true, third_array);
+console.log(first_array);
+console.log(second_array);
+console.log(third_array);
+console.log(fourth_array);
+
+// Array access
+console.log(third_array[1]);
+console.log(fourth_array[4][0]);
+console.log(fourth_array[2][0]);
+console.log(fourth_array[2][1]);
+console.log(fourth_array[2][2]);
+console.log(fourth_array[2][3]);
+
+// Array length
+console.log("El tamaño del array cuarto es " + fourth_array.length);
+
+// Array push (añade al final)
+console.log(fourth_array.push("Spain"));
+console.log(fourth_array);
+
+// Array unshift (añade al principio)
+fourth_array.unshift(1);
+console.log(fourth_array);
+
+// For, forEach
+console.log("For y foreach");
+for (var i = 0; i < fourth_array.length; i++) {
+    console.log("Entramos en la iteración de " + fourth_array[i]);
+}
+console.log("De otra forma");
+for (var i = fourth_array.length - 1; i >= 0; i--) {
+    console.log("Entramos en la iteración de " + fourth_array[i]);
+}
+
+console.log("For each ejemplo");
+var i = fourth_array.length - 1;
+for (; i >= 0; i--) {
+    console.log("Entramos en la iteración de " + fourth_array[i]);
+}
+
+console.log("Otro for each¿");
+fourth_array.forEach(function (element) {
+    console.log("Fourth iteration " + element);
+});
