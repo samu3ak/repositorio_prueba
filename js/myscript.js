@@ -217,12 +217,79 @@ console.log(today);
 console.log(first_october);
 console.log(today.getDay());
 console.log(today.getDate());
-console.log(today.getMonth()+1);
+console.log(today.getMonth() + 1);
 
 // Comparar fechas
-if(today>first_october){
+if (today > first_october) {
     console.log("Today is after to first october");
-}else{
+} else {
     console.log("Today is before to first october");
 }
 
+//Events JS
+console.log("JS Event (Press button)");
+
+function myFirstFunction() {
+    console.log("Thank you for you click.");
+}
+
+function mySecondFunction() {
+    console.log("Thank you for your interest.");
+}
+
+// Select DOM
+console.log("Select DOM");
+
+var div = document.getElementById("my_div");
+div.classList.add("my_class");
+console.log(div);
+
+// Select DOM II
+var div = document.getElementsByTagName("div");
+console.log(div);
+
+var second_div = document.querySelector("#my_second_div"); // Selector de CSS Básicamente
+console.log(second_div);
+
+// Función auxiliar kekw
+console.log("Función que importa JQuery muy útil");
+function $(selector) {
+    return document.querySelectorAll(selector);
+}
+console.log($("#my_third_div"));
+console.log($(".div_especial"));
+
+// Funciones
+var numbers = [1, 2, 3, 4];
+var n_elevator_2 = numbers.map(function (n) { return n * n }); // A un array le aplico a cada uno de sus elementos una función
+console.log(n_elevator_2);
+
+// Funciones flecha, simplificada
+
+var n_elevator_2 = numbers.map((n) => { return n * n }); // Lo mismo de arriba pero más simplificado con flechas, te ahorras function
+console.log(n_elevator_2);
+
+var n_elevator_2 = numbers.map((n) => { console.log(n * n); return n * n }); // Puedes meter más shit, al fin y al cabo es una función
+console.log(n_elevator_2);
+
+var n_elevator_2 = numbers.map(n => n * n); // Más limpia
+console.log(n_elevator_2);
+
+/** El método map, lo que hace es que dado un array, aplica todo lo que se mete dentro a cada uno de los
+ * elementos que se encuentran dentro del array
+ */
+console.log("Más ejemplos");
+
+let numbers2 = [[1, 2], [2, 3], [3, 4], [4, 5]];
+let itself = numbers2.map(([x, y]) => x * y); // Para manejar bidimensionales y toquetear
+console.log(itself);
+
+// FORMULARIO PRUEBA
+function $(selector) {
+    return document.querySelector(selector); // VOLVEMOS A USARLA
+}
+
+$("#btn2").addEventListener("click", function () {
+    var input = document.createElement("input");
+    console.log(input);
+});
