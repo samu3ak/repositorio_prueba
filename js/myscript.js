@@ -296,13 +296,13 @@ $("#btn2").addEventListener("click", function () {
 
 // LE METO ATRIBUTOS
 
-$("#btn2").addEventListener("click", function () { // LO MODIFICO PARA QUE CREE LA ETIQUETA
-    var input = document.createElement("input");
-    input.setAttribute("type", "email");
-    input.setAttribute("placeholder", "E-mail");
-    input.setAttribute("name", "mails");
-    $("#forms").appendChild(input);
-});
+// $("#btn2").addEventListener("click", function () { // LO MODIFICO PARA QUE CREE LA ETIQUETA
+//     var input = document.createElement("input");
+//     input.setAttribute("type", "email");
+//     input.setAttribute("placeholder", "E-mail");
+//     input.setAttribute("name", "mails");
+//     $("#forms").appendChild(input);
+// });
 
 // MAS CAMBIOS 
 
@@ -315,10 +315,33 @@ $("#btn2").addEventListener("click", function () { // LO MODIFICO PARA QUE CREE 
     myAlert("Add new email input");
 });
 
-function myAlert(msg) {
+// function myAlert(msg) {
+//     var div = document.createElement("div");
+//     div.classList.add("alert");
+//     div.innerHTML = msg; // METE EN MEDIO DE LA ETIQUETA EL TEXTO MSG MANDADO POR PARÁMETRO
+//     $("body").insertBefore(div, $("body").firstChild); // LO METE ANTES DEL PRIMER ELEMENTO DEL BODY, EN LOS PARÁMETROS PRIMERO VA 
+//     // LO QUE QUIERES METER (EL DIV), ANTES DEL PRIMER HIJO DEL BODY
+// }
+
+function bind_close() {
+    let elements = document.querySelectorAll(".close");
+    for (var i = elements.length - 1; i >= 0; i--) {
+        let el = elements[i];
+        el.addEventListener("click", function () {
+            this.parentNode.style.display = "none";
+        });
+    }
+}
+
+function myAlert(msg) { // LA MEJORO PARA AÑADIR UN BOTON DE CIERRE DINAMICAMENTE
     var div = document.createElement("div");
     div.classList.add("alert");
     div.innerHTML = msg; // METE EN MEDIO DE LA ETIQUETA EL TEXTO MSG MANDADO POR PARÁMETRO
+    var close = document.createElement("span");
+    close.classList.add("close");
+    close.innerHTML = "X";
+    div.appendChild(close);
     $("body").insertBefore(div, $("body").firstChild); // LO METE ANTES DEL PRIMER ELEMENTO DEL BODY, EN LOS PARÁMETROS PRIMERO VA 
     // LO QUE QUIERES METER (EL DIV), ANTES DEL PRIMER HIJO DEL BODY
+    bind_close();
 }
