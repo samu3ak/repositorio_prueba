@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        div {
+            width: 200px;
+            height: 100px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div onmousemove="myFunction(event)" onmouseout="clearCoor()"></div>
+
+    <p>Mouse over the rectangle above, and get the coordinates of your mouse pointer.</p>
+
+    <p>When the mouse is moved over the div, the p element will display the horizontal and vertical coordinates of your
+        mouse pointer, whose values are returned from the clientX and clientY properties on the
+        MouseEvent object.</p>
+
+    <p id="demo"></p>
+
+    <button>Click me biatch</button>
+
+    <script>
+        function myFunction(e) {
+            var x = e.clientX;
+            var y = e.clientY;
+            var coor = "Coordinates: (" + x + "," + y + ")";
+            document.getElementById("demo").innerHTML = coor;
+        }
+
+        function clearCoor() {
+            document.getElementById("demo").innerHTML = "";
+        }
+
+        // var horaformatoGMT = new Date().toGMTString();
+        // var ruta = "/inicio";
+        // var nombreDominio = "miweb.com";
+
+
+        // document.cookie = "nombreCookie=datosCookie[; expires = horaformatoGMT][; path = ruta][; domain = nombreDominio][; secure]";
+
+        // Al final las cookies es como un fichero de texto y se deben de tratar como tal, y para extraer la información hay que hacerlo
+        // pensando que son ficheros
+        function getCookie(name) {
+            let value = `; ${document.cookie}`; // Lo mismo que "; "+document.cookie;
+            let parts = value.split(`; ${name}=`); // Lo mismo que value.split("; "+name+"=");
+            if (parts.length === 2) return parts.pop().split(';').shift();
+        }
+        // FUNCIONAMIENTO DE LA FUNCIÓN CON PARÁMETRO contador getCookie(contador)
+        // "; nombre=oeschger; comida=tripa; contador=0; usuario=Guillermo"
+        // "["nombre=oeschger; comida=tripa","0; usuario=Guillermo"]"
+        // return -> pop -> "0; usuario=Guillermo" -> split(';') -> ["0","usuario=Guillermo"] -> shift() -> return "0"
+
+        document.cookie = "nombre=oeschger";
+        document.cookie = "comida_preferida=tripa";
+        document.cookie = "usuario=Rodolfo";
+        document.cookie = "usuario=Guillermo"; // Esta reemplaza a la anterior ya que ya existe una cookie usuario
+
+        var now = new Date();
+        now.setTime(now.getTime() + 1 * 3600 * 1000);
+
+
+        document.cookie = "contador"; // Establezco la cookie sin valor, porque si no siempre se resetea
+        document.querySelector("button").addEventListener("click", () => {
+            let cont = new Number(getCookie("contador"));
+            cont++;
+            document.cookie = `contador=${cont}`;
+            console.log(document.cookie);
+        });
+
+    </script>
+
+</body>
+
+</html>
