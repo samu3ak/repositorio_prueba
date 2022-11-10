@@ -1,6 +1,5 @@
 var namePattern = "^[a-z A-Z]{4,30}$";
 var emailPattern = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,4}$";
-
 function checkInput(idInput, pattern) {
     return $(idInput).val().match(pattern) ? true : false;
 }
